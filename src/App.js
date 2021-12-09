@@ -1,3 +1,5 @@
+/* eslint-disable import/named */
+/* eslint-disable import/namespace */
 import ReactDOM from "react-dom";
 import { StrictMode } from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";

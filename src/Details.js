@@ -1,11 +1,11 @@
+/* eslint-disable import/named */
+/* eslint-disable import/namespace */
 import { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 class Details extends Component {
-  constructor() {
-    super();
-    this.state = { loading: true };
-  }
+  state = { loading: true };
+
   async componentDidMount() {
     const res = await fetch(
       `http://pets-v2.dev-apis.com/pets?id=${this.props.match.params.id}`
@@ -21,6 +21,9 @@ class Details extends Component {
     );
   }
   render() {
+    if (this.state.loading) {
+      return <h2>loading...</h2>;
+    }
     const { animal, breed, city, state, description, name } = this.state;
     return (
       <div className="details">
