@@ -26,14 +26,6 @@ const SearchParams = () => {
   return (
     <div className="search-params">
       <form>
-        {pets.map((pet) => (
-          <Pet
-            name={pet.name}
-            animal={pet.animal}
-            breed={pet.breed}
-            key={pet.id}
-          />
-        ))}
         <label htmlFor="location">
           Location
           <input
@@ -77,6 +69,14 @@ const SearchParams = () => {
         </label>
         <button>Submit</button>
       </form>
+      {pets.map((pet) => (
+        <Pet
+          name={pet.name}
+          animal={pet.animal}
+          breed={pet.breed}
+          key={pet.id}
+        />
+      ))}
     </div>
   );
 };
