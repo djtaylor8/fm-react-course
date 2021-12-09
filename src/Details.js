@@ -22,6 +22,7 @@ class Details extends Component {
       )
     );
   }
+
   render() {
     if (this.state.loading) {
       return <h2>loading...</h2>;
