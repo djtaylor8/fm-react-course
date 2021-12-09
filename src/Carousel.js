@@ -8,6 +8,13 @@ class Carousel extends Component {
   static defaultProps = {
     images: ["http://pets-images.dev-apis.com/pets/none.jpg"],
   };
+
+  handleIdxClick = (event) => {
+    this.setState({
+      active: +event.target.dataset.index,
+    });
+  };
+
   render() {
     const { active } = this.state;
     const { images } = this.props;
@@ -17,8 +24,11 @@ class Carousel extends Component {
         <img src={images[active]} alt="animal" />
         <div className="carousel-smaller">
           {images.map((photo, idx) => (
+            //eslint-disable-next-line
             <img
               key={photo}
+              data-index={idx}
+              onClick={this.handleIdxClick}
               src={photo}
               className={idx === active ? "active" : ""}
               alt="animal thumbnail"
