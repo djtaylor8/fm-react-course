@@ -1,11 +1,12 @@
 /* eslint-disable import/named */
 /* eslint-disable import/namespace */
-import { Component } from "react";
+import { Component, lazy } from "react";
 import { withRouter } from "react-router-dom";
 import Carousel from "./Carousel";
 import ThemeContext from "./ThemeContext";
 import ErrorBoundary from "./ErrorBoundary";
-import Modal from "./Modal";
+
+const Modal = lazy(() => import("./Modal"));
 
 class Details extends Component {
   state = { loading: true, showModal: false };
